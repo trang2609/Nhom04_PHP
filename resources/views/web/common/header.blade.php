@@ -1,4 +1,5 @@
 <!-- Header section -->
+ <!--
 <style>
     .header {
         position: fixed;
@@ -7,6 +8,7 @@
         width: 100%;
         z-index: 1000;
     }
+-->
 </style>
 <nav class="header navbar navbar-expand-lg navbar-dark shadow" style="background-color: #ffffff">
     <div class="container">

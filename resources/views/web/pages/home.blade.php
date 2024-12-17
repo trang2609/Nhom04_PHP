@@ -11,10 +11,10 @@
         .carousel-control-prev, 
         .carousel-control-next {
             background-color: #72be43; /* Màu xanh cho nền */
-            border-radius: 50%; /* Làm tròn các nút */
-            width: 40px;  /* Chiều rộng nút */
-            height: 40px; /* Chiều cao nút */
-            padding: 0; /* Bỏ padding mặc định để giữ kích thước vừa phải */
+            border-radius: 50%;
+            width: 40px;  
+            height: 40px;
+            padding: 0;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -23,17 +23,23 @@
             position: absolute; /* Đảm bảo vị trí tương đối so với carousel */
         }
 
+        .carousel-control-prev {
+            left: 50px; 
+        }
+
+        .carousel-control-next {
+            right: 50px;
+        }
+
         .carousel-control-prev-icon, 
         .carousel-control-next-icon {
-            background-color: white; /* Màu trắng cho icon */
-            width: 20px;  /* Chiều rộng icon */
-            height: 20px; /* Chiều cao icon */
-            border-radius: 50%; /* Làm tròn icon */
+            width: 20px; 
+            height: 20px; 
         }
 
         .carousel-control-prev:hover, 
         .carousel-control-next:hover {
-            background-color: #66a839; /* Màu xanh đậm hơn khi hover */
+            background-color: #66a839; 
         }
 </style>
 
