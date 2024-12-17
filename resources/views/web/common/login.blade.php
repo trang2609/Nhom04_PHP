@@ -1,5 +1,5 @@
 @php use Illuminate\Support\Facades\Cookie; @endphp
-    <!-- Login -->
+<!-- Login -->
 <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
     <div class="modal-dialog container">
         <div class="modal-content">

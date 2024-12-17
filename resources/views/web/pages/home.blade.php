@@ -3,29 +3,64 @@
 
 @endsection
 @section('content')
+<style>
+        .carousel-inner {
+            margin-top: 80px; /* Đảm bảo đủ khoảng cách */
+        }
+
+        .carousel-control-prev, 
+        .carousel-control-next {
+            background-color: #72be43; /* Màu xanh cho nền */
+            border-radius: 50%; /* Làm tròn các nút */
+            width: 40px;  /* Chiều rộng nút */
+            height: 40px; /* Chiều cao nút */
+            padding: 0; /* Bỏ padding mặc định để giữ kích thước vừa phải */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            top: 50%; /* Đưa nút đến 50% chiều cao carousel */
+            transform: translateY(-50%); /* Căn giữa nút chính xác */
+            position: absolute; /* Đảm bảo vị trí tương đối so với carousel */
+        }
+
+        .carousel-control-prev-icon, 
+        .carousel-control-next-icon {
+            background-color: white; /* Màu trắng cho icon */
+            width: 20px;  /* Chiều rộng icon */
+            height: 20px; /* Chiều cao icon */
+            border-radius: 50%; /* Làm tròn icon */
+        }
+
+        .carousel-control-prev:hover, 
+        .carousel-control-next:hover {
+            background-color: #66a839; /* Màu xanh đậm hơn khi hover */
+        }
+</style>
+
 <section class="container-lg clearfix">
     <!-- Slider -->
-    <div id="carouselExampleControls" class="carousel slide shadow" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            @foreach($banners as $banner)
-            <div class="carousel-item @if($loop->first) active @endif">
-                @if(strstr($banner->image,"https") == "")
-                <img src="https://res.cloudinary.com/{!! $cloud_name !!}/image/upload/{!! $banner['image'] !!}.jpg" class="d-block w-100" style="max-height: 600px; object-fit: contain; object-position: 50% 100%" alt="...">
-                @else
-                <img src="{{ $banner->image }}" class="d-block w-100" style="max-height: 600px; object-fit: contain; object-position: 50% 100%" alt="...">
-                @endif
-            </div>
-            @endforeach
+    <div id="carouselExampleControls1" class="carousel slide shadow" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        @foreach($banners as $banner)
+        <div class="carousel-item @if($loop->first) active @endif">
+            @if(strstr($banner->image, "https") == "")
+            <img src="{{ asset('images/' . $banner['image']) }}" class="d-block w-100" style="max-height: 600px; object-fit: contain; object-position: 50% 100%" alt="...">
+            @else
+            <img src="{{ $banner->image }}" class="d-block w-100" style="max-height: 600px; object-fit: contain; object-position: 50% 100%" alt="...">
+            @endif
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
+        @endforeach
     </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls1" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls1" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
     <!--end slider -->
 
     <!-- Main content -->
