@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Client Cinema</title>
+    <title>CinemaX</title>
     <!-- Google Search -->
     <meta name="google-site-verification" content="1PaYB4dlqRjhgBy-jyq5O89I4a8BzAc3d1E_s1BXLPs" />
 

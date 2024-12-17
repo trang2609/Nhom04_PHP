@@ -165,46 +165,6 @@
                 </a>
             </li>
             @endcan
-            @can('buyTicket')
-            <li class="nav-item">
-                <a class="nav-link @yield('active')" href="./admin/buyTicket">
-                    <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="fa-sharp fa-light fa-ticket-simple text-success text-sm opacity-10"></i>
-                    </div>
-                    <span class="nav-link-text ms-1">@lang('lang.sell_ticket')</span>
-                </a>
-            </li>
-            @endcan
-            @can('buyCombo')
-            <li class="nav-item">
-                <a class="nav-link @yield('active')" href="./admin/buyCombo">
-                    <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="fa-solid fa-burger-soda text-danger text-sm opacity-10"></i>
-                    </div>
-                    <span class="nav-link-text ms-1">@lang('lang.sell_combo')</span>
-                </a>
-            </li>
-            @endcan
-            @can('buyTicket')
-            <li class="nav-item">
-                <a class="nav-link @yield('active')" href="./admin/scanTicket">
-                    <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="fa-solid fa-barcode-scan text-success text-sm opacity-10"></i>
-                    </div>
-                    <span class="nav-link-text ms-1">@lang('lang.scan_ticket')</span>
-                </a>
-            </li>
-            @endcan
-            @can('buyCombo')
-            <li class="nav-item">
-                <a class="nav-link @yield('active')" href="./admin/scanCombo">
-                    <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="fa-sharp fa-regular fa-scanner-gun text-info text-sm opacity-10"></i>
-                    </div>
-                    <span class="nav-link-text ms-1">@lang('lang.scan_combo')</span>
-                </a>
-            </li>
-            @endcan
             @can('feedback')
             <li class="nav-item">
                 <a class="nav-link @yield('active')" href="./admin/feedback">
