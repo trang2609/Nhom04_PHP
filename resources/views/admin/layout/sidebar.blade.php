@@ -9,6 +9,16 @@
     <hr class="horizontal dark mt-0">
     <div class="collapse navbar-collapse w-auto h-auto" id="sidenav-collapse-main">
         <ul class="navbar-nav">
+            @can('theater')
+            <li class="nav-item">
+                <a class="nav-link @yield('active')" href="./admin/theater">
+                    <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="fa-solid fa-tv text-success text-sm opacity-10"></i>
+                    </div>
+                    <span class="nav-link-text ms-1">@lang('lang.theater')</span>
+                </a>
+            </li>
+            @endcan
             @can('movie_genre')
             <li class="nav-item">
                 <a class="nav-link @yield('active')" href="./admin/movie_genres">
@@ -29,36 +39,6 @@
                 </a>
             </li>
             @endcan
-            @can('theater')
-            <li class="nav-item">
-                <a class="nav-link @yield('active')" href="./admin/theater">
-                    <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="fa-solid fa-tv text-success text-sm opacity-10"></i>
-                    </div>
-                    <span class="nav-link-text ms-1">@lang('lang.theater')</span>
-                </a>
-            </li>
-            @endcan
-            @can('price')
-            <li class="nav-item">
-                <a class="nav-link @yield('active')" href="./admin/prices">
-                    <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="fa-solid fa-money-bill text-success text-sm opacity-10"></i>
-                    </div>
-                    <span class="nav-link-text ms-1">@lang('lang.prices_ticket')</span>
-                </a>
-            </li>
-            @endcan
-            @can('schedule_movie')
-            <li class="nav-item">
-                <a class="nav-link @yield('active')" href="./admin/schedule">
-                    <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="fa-solid fa-calendar-days text-info text-sm opacity-10"></i>
-                    </div>
-                    <span class="nav-link-text ms-1">@lang('lang.schedule')</span>
-                </a>
-            </li>
-            @endcan
             @can('events')
             <li class="nav-item">
                 <a class="nav-link @yield('active')" href="./admin/events">
@@ -74,16 +54,6 @@
                         <i class="fa-regular fa-newspaper text-warning text-sm opacity-10"></i>
                     </div>
                     <span class="nav-link-text ms-1">@lang('lang.news')</span>
-                </a>
-            </li>
-            @endcan
-            @can('ticket')
-            <li class="nav-item">
-                <a class="nav-link @yield('active')" href="./admin/ticket">
-                    <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="fa-sharp fa-solid fa-ticket text-warning text-sm opacity-10"></i>
-                    </div>
-                    <span class="nav-link-text ms-1">@lang('lang.ticket')</span>
                 </a>
             </li>
             @endcan
@@ -115,26 +85,6 @@
                 </a>
             </li>
             @endcan
-            @can('user')
-            <li class="nav-item">
-                <a class="nav-link @yield('active')" href="./admin/user">
-                    <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="fa-solid fa-user text-primary text-sm opacity-10"></i>
-                    </div>
-                    <span class="nav-link-text ms-1">@lang('lang.user')</span>
-                </a>
-            </li>
-            @endcan
-            @role('admin')
-            <li class="nav-item">
-                <a class="nav-link @yield('active')" href="./admin/staff">
-                    <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="fa-solid fa-user-tie text-danger text-sm opacity-10"></i>
-                    </div>
-                    <span class="nav-link-text ms-1">@lang('lang.staff')</span>
-                </a>
-            </li>
-            @endrole
             @can('banners')
             <li class="nav-item">
                 <a class="nav-link @yield('active')" href="./admin/banners">
@@ -165,6 +115,56 @@
                 </a>
             </li>
             @endcan
+            @can('price')
+            <li class="nav-item">
+                <a class="nav-link @yield('active')" href="./admin/prices">
+                    <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="fa-solid fa-money-bill text-success text-sm opacity-10"></i>
+                    </div>
+                    <span class="nav-link-text ms-1">@lang('lang.prices_ticket')</span>
+                </a>
+            </li>
+            @endcan
+            @can('schedule_movie')
+            <li class="nav-item">
+                <a class="nav-link @yield('active')" href="./admin/schedule">
+                    <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="fa-solid fa-calendar-days text-info text-sm opacity-10"></i>
+                    </div>
+                    <span class="nav-link-text ms-1">@lang('lang.schedule')</span>
+                </a>
+            </li>
+            @endcan
+            @can('ticket')
+            <li class="nav-item">
+                <a class="nav-link @yield('active')" href="./admin/ticket">
+                    <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="fa-sharp fa-solid fa-ticket text-warning text-sm opacity-10"></i>
+                    </div>
+                    <span class="nav-link-text ms-1">@lang('lang.ticket')</span>
+                </a>
+            </li>
+            @endcan
+            @can('user')
+            <li class="nav-item">
+                <a class="nav-link @yield('active')" href="./admin/user">
+                    <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="fa-solid fa-user text-primary text-sm opacity-10"></i>
+                    </div>
+                    <span class="nav-link-text ms-1">@lang('lang.user')</span>
+                </a>
+            </li>
+            @endcan
+            @role('admin')
+            <li class="nav-item">
+                <a class="nav-link @yield('active')" href="./admin/staff">
+                    <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="fa-solid fa-user-tie text-danger text-sm opacity-10"></i>
+                    </div>
+                    <span class="nav-link-text ms-1">@lang('lang.staff')</span>
+                </a>
+            </li>
+            @endrole
             @can('feedback')
             <li class="nav-item">
                 <a class="nav-link @yield('active')" href="./admin/feedback">

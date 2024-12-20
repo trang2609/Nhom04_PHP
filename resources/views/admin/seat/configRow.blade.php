@@ -1,7 +1,7 @@
 <div class="offcanvas offcanvas-start" tabindex="-1" id="EditRow_{{ $room->id }}_{{ $row->row }}"
      aria-labelledby="EditSeatRowLabel">
     <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="EditSeatRowLabel">@lang('lang.edit') @lang('lang.seat_row')</h5>
+        <h5 class="offcanvas-title" id="EditSeatRowLabel">Chỉnh sửa hàng ghế</h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
                 aria-label="Close"></button>
     </div>
@@ -21,13 +21,13 @@
                 </div>
             @endforeach
             <div class="form-group">
-                <label for="row_mb_{{ $room->id }}_{{ $row->row }}">@lang('lang.below_align')</label>
+                <label for="row_mb_{{ $room->id }}_{{ $row->row }}">Căn hàng dưới</label>
                 <input class="form-control" type="number" name="mb" id="row_mb_{{ $room->id }}_{{ $row->row }}">
             </div>
             <input type="hidden" name="room" value="{{ $room->id }}">
             <input type="hidden" name="row" value="{{ $row->row }}">
-            <button type="submit" class="btn btn-primary" data-bs-dismiss="offcanvas">
-                @lang('lang.confirm')
+            <button type="submit" class="btn btn-success" data-bs-dismiss="offcanvas">
+                Lưu
             </button>
         </form>
     </div>

@@ -1,3 +1,45 @@
+<style>
+    .nav-link {
+        color: #2d8a3b !important;
+    }
+
+    .nav-link.active {
+        background-color: #2d8a3b !important;
+        color: white !important;
+    }
+
+    .p-4 h4 {
+    color: #2d8a3b; 
+    }
+
+    .label-green {
+    color: #28a745; 
+    }
+    
+    th.text-xxs.text-center {
+    color: #28a745;
+    }
+    
+    .table-bordered {
+    border-collapse: collapse; 
+    width: 100%;
+    }
+
+    .table-bordered th, .table-bordered td {
+        border: 1px solid #28a745; 
+        padding: 8px;
+        text-align: center; 
+    }
+
+    .table-bordered thead th {
+        border-top: 1px solid #28a745; 
+    }
+
+    .table-bordered tr {
+        border-bottom: 1px solid #28a745; 
+    }
+</style>
+
 @extends('web.layout.index')
 @section('link_css')
 <link rel="stylesheet" type="text/css" href="/web_assets/css/style.css">
@@ -45,13 +87,13 @@ $generatorPNG = new Picqer\Barcode\BarcodeGeneratorPNG();
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>@lang('lang.fullname')</label>
+                                            <label class="label-green">@lang('lang.fullname')</label>
                                             <input type="text" class="form-control" name="fullName" required value="{!! $user['fullName'] !!}" aria-label="">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Email</label>
+                                            <label class="label-green">Email</label>
                                             <input type="email" class="form-control" name="email" value="{!! $user['email'] !!}" aria-label="">
                                             <labeL class="text-danger">
                                                 @if(isset($user['email']) && $user['email_verified']== 0)
@@ -62,7 +104,7 @@ $generatorPNG = new Picqer\Barcode\BarcodeGeneratorPNG();
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>@lang('lang.phone')</label>
+                                            <label class="label-green">@lang('lang.phone')</label>
                                             <input type="text" class="form-control" name="phone" value="{!! $user['phone'] !!}" aria-label="">
                                         </div>
                                     </div>
@@ -72,7 +114,7 @@ $generatorPNG = new Picqer\Barcode\BarcodeGeneratorPNG();
                                         </div>
                                         <div class="col">
                                             <div class="progress">
-                                                <div class="progress-bar bg-warning progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="{!! $sum_percent !!}" aria-valuemin="0" aria-valuemax="100" 
+                                                <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="{!! $sum_percent !!}" aria-valuemin="0" aria-valuemax="100" 
                                                 @if($sum_percent <100) 
                                                 style="width:{!! $sum_percent !!}%" 
                                                 @else 
@@ -107,7 +149,7 @@ $generatorPNG = new Picqer\Barcode\BarcodeGeneratorPNG();
                                         </div>
                                     </div>
                                     <div>
-                                        <button class="btn btn-primary" type="submit">@lang('lang.update')</button>
+                                        <button class="btn btn-success" type="submit">@lang('lang.update')</button>
                                     </div>
                                 </div>
                             </div>
@@ -120,7 +162,7 @@ $generatorPNG = new Picqer\Barcode\BarcodeGeneratorPNG();
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>@lang('lang.old_password')</label>
+                                            <label class="label-green">@lang('lang.old_password')</label>
                                             <input type="password" name="oldpassword" class="form-control">
                                         </div>
                                     </div>
@@ -128,26 +170,26 @@ $generatorPNG = new Picqer\Barcode\BarcodeGeneratorPNG();
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>@lang('lang.new_password')</label>
+                                            <label class="label-green">@lang('lang.new_password')</label>
                                             <input type="password" name="password" class="form-control">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>@lang('lang.cofirm_new_password')</label>
+                                            <label class="label-green">@lang('lang.cofirm_new_password')</label>
                                             <input type="password" name="repassword" class="form-control">
                                         </div>
                                     </div>
                                 </div>
                                 <div>
-                                    <button class="btn btn-primary" type="submit">@lang('lang.update')</button>
+                                    <button class="btn btn-success" type="submit">@lang('lang.update')</button>
                                 </div>
                             </div>
                         </div>
                     </form>
                     <div class="collapse" id="notification" data-bs-parent="#mainContent">
                         <div aria-labelledby="notification-tab">
-                            <h3 class="mb-4 text-center">@lang('lang.transaction_history')</h3>
+                            <h3 class="mb-4 text-center text-success">@lang('lang.transaction_history')</h3>
                             <div class="container ">
                                 @foreach($sort_ticket as $value)
                                 @if(isset($value['schedule']['movie']['image']))
@@ -195,8 +237,8 @@ $generatorPNG = new Picqer\Barcode\BarcodeGeneratorPNG();
                                     </p>
                                     <p>{!! number_format($value['totalPrice'],0,",",".") !!}</p>
                                     @if($value['holdState'] == 0)
-                                    <button href="#profileModal" data-toggle="tooltip" data-bs-target="#profileModal{!! $value['id'] !!}" data-bs-toggle="modal" class="btn btn-warning">@lang('lang.detail')</button>
-                                    <a href="/tickets/completed/{!! $value['id'] !!}" class="btn btn-warning"><i class="fa-solid fa-ticket"></i></a>
+                                    <button href="#profileModal" data-toggle="tooltip" data-bs-target="#profileModal{!! $value['id'] !!}" data-bs-toggle="modal" class="btn btn-success">@lang('lang.detail')</button>
+                                    <a href="/tickets/completed/{!! $value['id'] !!}" class="btn btn-success"><i class="fa-solid fa-ticket"></i></a>
                                     @else
                                     <button class="btn btn-warning" disabled>X</button>
                                     @endif

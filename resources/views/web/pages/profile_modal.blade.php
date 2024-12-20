@@ -17,9 +17,6 @@
                             </div>
                             <p>@lang('lang.purchase_date') : {!! date("d/m/Y",strtotime($value['created_at']))!!}</p>
                             <span>@lang('lang.payment_methods'):@lang('lang.vnpay_wallet') </span>
-                            <div class="d-flex justify-content-end ">
-                            <button href="#billModal" data-toggle="tooltip" data-bs-target="#billModal{!! $value['id'] !!}" data-bs-toggle="modal" class="btn btn-danger m-2" style="width: 130px;">@lang('lang.print_bill')</button>
-                            </div>
                             <table class="table table-bordered">
                                 <thead>
                                     <tr>
@@ -56,7 +53,6 @@
                                     </tr>
                                 </tbody>
                             </table>
-                            <a href="#refundTicket" data-toggle="tooltip" data-bs-target="#refundTicket{!! $value['id'] !!}" data-bs-toggle="modal" class="text-uppercase text-center link link-dark text-decoration-none text-xl text-dark ">@lang('lang.refund_ticket')</a>
                         </div>
                     </div>
                 </div>

@@ -16,7 +16,7 @@
                 </li>
                 <li class="vr mx-5"></li>
                 <li class="nav-item">
-                    <button class="h5 nav-link link-warning active fw-bold border-bottom border-2 border-warning"
+                    <button class="h5 nav-link link-success active fw-bold border-bottom border-2 border-success"
                             data-bs-toggle="collapse"
                             data-bs-target="#lichtheorap" disabled>
                         @lang('lang.theater_showtime')
@@ -28,7 +28,7 @@
                 <div class="d-flex flex-row mt-4">
                     @foreach($cities as $city)
                         <div class="flex-city p-2 m-1 border-0">
-                            <button class="btn @if($loop->first) btn-warning @else btn-secondary @endif p-3"
+                            <button class="btn @if($loop->first) btn-success @else btn-secondary @endif p-3"
                                     data-bs-toggle="collapse"
                                     data-bs-target="#Theater_{{str_replace(' ', '', $city)}}" @if($loop->first) disabled @endif>{{$city}}
                             </button>
@@ -46,13 +46,13 @@
                                         <div class="col">
                                             <div class="card px-0 overflow-hidden theater_item"
                                                  style="background: #f5f5f5">
-                                                <button class="btn rounded-0 border-0 btn_theater @if($loop->first) btn-warning @endif"
+                                                <button class="btn rounded-0 border-0 btn_theater @if($loop->first) btn-success @endif"
                                                         data-bs-toggle="collapse"
                                                         data-bs-target="#TheaterSchedules_{{$theater->id}}"
                                                         @if($loop->first) disabled @endif>
                                                     <div class="card-body">
-                                                        <h5 class="card-title fs-4">{{ $theater->name }}</h5>
-                                                        <p class="card-text fs-6 text-secondary">
+                                                        <h5 class="card-title fs-4 text-white">{{ $theater->name }}</h5>
+                                                        <p class="card-text fs-6 text-white">
                                                             <i class="fa-solid fa-location-dot"></i>
                                                             {{ $theater->address }}
                                                         </p>
@@ -110,18 +110,18 @@
     <script>
         $(document).ready(function () {
             $("#schedules .nav .nav-item .nav-link").on("click", function () {
-                $("#schedules .nav-item").find(".active").removeClass("active link-warning fw-bold border-bottom border-2 border-warning").addClass("link-secondary").prop('disabled', false);
-                $(this).addClass("active link-warning fw-bold border-bottom border-2 border-warning").removeClass("link-secondary").prop('disabled', true);
+                $("#schedules .nav-item").find(".active").removeClass("active link-success fw-bold border-bottom border-2 border-success").addClass("link-secondary").prop('disabled', false);
+                $(this).addClass("active link-success fw-bold border-bottom border-2 border-success").removeClass("link-secondary").prop('disabled', true);
             });
 
             $("#lichtheorap .d-flex .flex-city .btn").on("click", function () {
-                $("#lichtheorap .flex-city").find(".btn").removeClass("btn-warning").addClass("btn-secondary").prop('disabled', false);
-                $(this).addClass("btn-warning").removeClass("btn-secondary").prop('disabled', true);
+                $("#lichtheorap .flex-city").find(".btn").removeClass("btn-success").addClass("btn-secondary").prop('disabled', false);
+                $(this).addClass("btn-success").removeClass("btn-secondary").prop('disabled', true);
             });
 
             $(".theater_item .btn_theater").on("click", function () {
-                $(".theater_item ").find(".btn_theater").removeClass("btn-warning").prop('disabled', false);
-                $(this).addClass("btn-warning").prop('disabled', true);
+                $(".theater_item ").find(".btn_theater").removeClass("btn-success").prop('disabled', false);
+                $(this).addClass("btn-success").prop('disabled', true);
             });
 
             $(".listDate button").on('click', function () {

@@ -3,7 +3,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="TheaterCreateModalLabel">Create Theater</h1>
+                <h1 class="modal-title fs-5" id="TheaterCreateModalLabel">Thêm rạp mới</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form action="/admin/theater/create" method="post">
@@ -12,19 +12,19 @@
                     <div class="row">
                         <div class="col-6">
                             <div class="form-group">
-                                <label for="name" class="form-label">Theater name</label>
-                                <input class="form-control" id="name" type="text" name="name" placeholder="type name...">
+                                <label for="name" class="form-label">Tên rạp</label>
+                                <input class="form-control" id="name" type="text" name="name" placeholder="Nhập tên rạp...">
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="form-group">
-                                <label for="address" class="form-label">Theater address</label>
-                                <input class="form-control" id="address" type="text" name="address" placeholder="type address...">
+                                <label for="address" class="form-label">Địa chỉ rạp</label>
+                                <input class="form-control" id="address" type="text" name="address" placeholder="Nhập địa chỉ rạp...">
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="form-group">
-                                <label for="city_create" class="form-label">Theater city</label>
+                                <label for="city_create" class="form-label">Thành phố</label>
                                 <select id="city_create" class="form-select" name="city">
                                     <option value="An Giang">An Giang</option>
                                     <option value="Bắc Giang">Bắc Giang</option>
@@ -95,17 +95,17 @@
                         </div>
                         <div class="col-6">
                             <div class="form-group">
-                                <label for="location" class="form-control-label">Theater location</label>
+                                <label for="location" class="form-control-label">Định vị rạp</label>
                                 <input class="form-control" id="location" type="text" name="location"
-                                       placeholder="type location...">
+                                       placeholder="Nhập định vị rạp...">
                             </div>
                         </div>
                     </div>
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn bg-gradient-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn bg-gradient-info">Save</button>
+                    <button type="button" class="btn bg-gradient-secondary" data-bs-dismiss="modal">Hủy</button>
+                    <button type="submit" class="btn bg-gradient-success">Lưu</button>
                 </div>
             </form>
         </div>

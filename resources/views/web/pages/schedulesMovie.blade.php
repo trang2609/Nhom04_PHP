@@ -23,15 +23,52 @@
     height: 100%;
     object-fit: cover;
     }
+    .owl-carousel-container {
+    position: relative;
+}
+
+    .carousel-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: #72be43;
+        border: none;
+        color: white;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        z-index: 10;
+    }
+
+    .carousel-nav i {
+        font-size: 18px;
+    }
+
+    .prev-btn {
+        left: -20px;
+    }
+
+    .next-btn {
+        right: -20px; 
+    }
+
+    .carousel-nav:hover {
+        background-color:#5da731;
+    }
 @endsection
 @section('content')
+
     <section class="container-lg clearfix" style="min-height: 1000px">
         <!-- Main content -->
         <div class="mt-5" id="schedules">
             {{-- SubNav --}}
             <ul class="nav justify-content-center mb-4">
                 <li class="nav-item">
-                    <button class="h5 nav-link link-warning active fw-bold border-bottom border-2 border-warning"
+                    <button class="h5 nav-link link-success active fw-bold border-bottom border-2 border-success"
                             aria-expanded="true"
                             data-bs-toggle="collapse"
                             data-bs-target="#lichtheophim" disabled>
@@ -48,9 +85,12 @@
 
             <div id="lichtheophim" class="collapse show" data-bs-parent="#schedules">
                 {{-- Carousel Movies --}}
-                <div class="owl-carousel">
-                    @foreach($movies as $movie)
-                            <?php $film[$movie->id] = $movie ?>
+                <div class="owl-carousel-container">
+                    <button class="carousel-nav prev-btn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="owl-carousel">
+                        @foreach($movies as $movie)
                             <div class="item">
                                 <button data-bs-toggle="collapse"
                                         data-bs-target=".multi-collapse_Movie_{{ $movie->id }}"
@@ -59,15 +99,18 @@
                                         class="btn btn-block border-0 p-2">
                                     @if(strstr($movie->image,"https") == "")
                                         <img class="rounded" style="width: 200px; height: 300px" alt="..."
-                                             src="https://res.cloudinary.com/{{ $cloud_name }}/image/upload/{{ $movie->image }}.jpg">
+                                            src="https://res.cloudinary.com/{{ $cloud_name }}/image/upload/{{ $movie->image }}.jpg">
                                     @else
                                         <img class="rounded" style="width: 200px; height: 300px" alt="..." src="{{ $movie->image }}">
                                     @endif
                                 </button>
                             </div>
-                    @endforeach
+                        @endforeach
+                    </div>
+                    <button class="carousel-nav next-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
                 </div>
-
                 <div id="collapseMovieParent">
                     @foreach($movies as $movie)
                         <!-- Movie -->
@@ -137,7 +180,7 @@
                                                 @else
                                                     aria-expanded="false"
                                                 @endif
-                                                class="btn btn-block btn-outline-dark p-2 m-2 @if($i==0) active @endif btn-date">
+                                                class="btn btn-block btn-outline-success p-2 m-2 @if($i==0) active @endif btn-date">
                                             {{ date('d/m', strtotime('+ '.$i.' day', strtotime(today()))) }}
                                         </button>
                                     </li>
@@ -163,8 +206,8 @@
     <script>
         $(document).ready(function () {
             $("#schedules .nav .nav-item .nav-link").on("click", function () {
-                $("#schedules .nav-item").find(".active").removeClass("active link-warning fw-bold border-bottom border-2 border-warning").addClass("link-secondary").prop('disabled', false);
-                $(this).addClass("active link-warning fw-bold border-bottom border-2 border-warning").removeClass("link-secondary").prop('disabled', true);
+                $("#schedules .nav-item").find(".active").removeClass("active link-success fw-bold border-bottom border-2 border-success").addClass("link-secondary").prop('disabled', false);
+                $(this).addClass("active link-success fw-bold border-bottom border-2 border-success").removeClass("link-secondary").prop('disabled', true);
             });
 
             $("#lichtheorap .d-flex .flex-city .btn").on("click", function () {
@@ -205,6 +248,15 @@
                 autoplayTimeout:2000,
                 autoplayHoverPause:true,
             });
+
+            $('.prev-btn').click(function () {
+                $owlMovies.trigger('prev.owl.carousel');
+            });
+
+            $('.next-btn').click(function () {
+                $owlMovies.trigger('next.owl.carousel');
+            });
+
             $owlMovies.on('mousewheel', '.owl-stage', function (e) {
                 if (e.deltaY>0) {
                     $owlMovies.trigger('next.owl');

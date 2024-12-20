@@ -5,20 +5,20 @@
     <div class="row">
         <div class="col-12">
             <div class="card mb-4">
-                <div class="card-header pb-0">
-                    <h6>@lang('lang.movie_genre')</h6>
+                <div class="card-header pb-0 ">
+                    <h6>QUẢN LÝ THỂ LOẠI PHIM</h6>
                 </div>
                 <div class="card-body px-0 pt-0 pb-2">
                     <div class="table-responsive p-0">
-                        <button style="float:right;padding-right:30px;" class="me-5  btn btn-primary float-right mb-3" data-bs-toggle="modal" data-bs-target="#movie_genre">
+                        <button style="float:right; display: flex; justify-content: center; align-items: center;" class="me-5  btn btn-success float-right mb-3" data-bs-toggle="modal" data-bs-target="#movie_genre">
                             @lang('lang.create')
                         </button>
                         <table class="table align-items-center mb-0">
                             <thead>
                                 <tr>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">@lang('lang.genre')</th>
+                                    <th class="text-dark text-xxl font-weight-bolder opacity-7">Tên thể loại</th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2"></th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">@lang('lang.status')</th>
+                                    <th class="text-center text-dark text-xxl font-weight-bolder opacity-7">@lang('lang.status')</th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2"></th>
                                     <th class="text-secondary opacity-7"></th>
                                 </tr>
@@ -47,13 +47,13 @@
                                         @endif
                                     </td>
                                     <td class="align-middle">
-                                        <a href="#editModal" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-bs-target="#editModal{!! $value['id'] !!}" data-bs-toggle="modal">
+                                        <a href="#editModal" class="text-success font-weight-bold text-xs" data-toggle="tooltip" data-bs-target="#editModal{!! $value['id'] !!}" data-bs-toggle="modal">
                                             <i class="fa-solid fa-pen-to-square fa-lg"></i>
                                         </a>
                                     </td>
 
                                     <td class="align-middle">
-                                        <a href="javascript:void(0)" data-url="{{ url('admin/movie_genres/delete', $value['id'] ) }}" class="text-secondary font-weight-bold text-xs delete-genres" data-toggle="tooltip">
+                                        <a href="javascript:void(0)" data-url="{{ url('admin/movie_genres/delete', $value['id'] ) }}" class="text-danger font-weight-bold text-xs delete-genres" data-toggle="tooltip">
                                             <i class="fa-solid fa-trash-can fa-lg"></i>
                                         </a>
                                     </td>

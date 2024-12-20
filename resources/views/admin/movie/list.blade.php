@@ -7,30 +7,30 @@
             <div class="card mb-4">
                 <div class="card-header pb-0">
                     <h6>
-                        @lang('lang.movies')
+                        Quản lý phim
                         <label for="search">
-                            <input type="text" placeholder="@lang('lang.type') @lang('lang.movies') " class="form-controller" id="search" name="search" />
+                            <input type="text" placeholder="Nhập tên phim..." class="form-controller" id="search" name="search" />
                         </label>
                     </h6>
+                    <a href="admin/movie/create" style="float:right;padding-right:30px;">
+                        <button class=" btn bg-gradient-success float-right mb-3">Thêm</button>
+                    </a>
                 </div>
                 <div class="card-body px-0 pt-0 pb-2">
                     <div class="table-responsive p-0">
-                        <a href="admin/movie/create" style="float:right;padding-right:30px;">
-                            <button class=" btn bg-gradient-danger float-right mb-3">@lang('lang.create')</button>
-                        </a>
                         <table class="table align-items-center mb-0 ">
                             <thead>
                                 <tr>
-                                    <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">@lang('lang.movie_genre')</th>
-                                    <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">@lang('lang.image')</th>
-                                    <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">@lang('lang.movie_name')</th>
-                                    <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">@lang('lang.showtime')</th>
-                                    <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">@lang('lang.national')</th>
-                                    <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">@lang('lang.release_date')</th>
-                                    <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">@lang('lang.end_date')</th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">@lang('lang.status')</th>
+                                    <th class="text-uppercase text-dark text-center text-xxs font-weight-bolder opacity-7">Thể loại phim</th>
+                                    <th class="text-uppercase text-dark text-center text-xxs font-weight-bolder opacity-7">Hình ảnh</th>
+                                    <th class="text-uppercase text-dark text-center text-xxs font-weight-bolder opacity-7">Tên phim</th>
+                                    <th class="text-uppercase text-dark text-center text-xxs font-weight-bolder opacity-7">Thời lượng</th>
+                                    <th class="text-uppercase text-dark text-center text-xxs font-weight-bolder opacity-7">Quốc gia</th>
+                                    <th class="text-uppercase text-dark text-center text-xxs font-weight-bolder opacity-7">Ngày phát hành</th>
+                                    <th class="text-uppercase text-dark text-center text-xxs font-weight-bolder opacity-7">Ngày kết thúc</th>
+                                    <th class="text-center text-uppercase text-dark text-xxs font-weight-bolder opacity-7">Trạng thái</th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"></th>
-                                    {{-- <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"></th>--}}
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -77,16 +77,16 @@
                                         @endif
                                     </td>
                                     <td class="align-middle">
-                                        <a href="admin/movie/edit/{!! $movie['id'] !!}" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                        <a href="admin/movie/edit/{!! $movie['id'] !!}" class="text-success font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                                             <i class="fa-solid fa-pen-to-square fa-lg"></i>
                                         </a>
                                     </td>
-                                    <!-- {{-- <td class="align-middle">--}}
-                                    {{-- <a href="javascript:;" data-url="{{ url('admin/movie/delete', $movie['id'] ) }}" class="text-secondary font-weight-bold text-xs delete-movie" data-toggle="tooltip"--}}
-                                    {{-- data-original-title="Delete movie">--}}
-                                    {{-- <i class="fa-solid fa-trash-can fa-lg"></i>--}}
-                                    {{-- </a>--}}
-                                    {{-- </td>--}} -->
+                                    <td class="align-middle">
+                                    <a href="javascript:;" data-url="{{ url('admin/movie/delete', $movie['id'] ) }}" class="text-danger font-weight-bold text-xs delete-movie" data-toggle="tooltip"
+                                    data-original-title="Delete movie">
+                                    <i class="fa-solid fa-trash-can fa-lg"></i>
+                                    </a>
+                                    </td> 
                                 </tr>
 
                                 @endforeach
@@ -106,35 +106,36 @@
 @endcan
 @endsection
 @section('scripts')
-<!-- {{--    <script>--}}
-{{--        $(document).ready(function () {--}}
-{{--            $.ajaxSetup({--}}
-{{--                headers: {--}}
-{{--                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')--}}
-{{--                }--}}
-{{--            });--}}
-{{--            $('.delete-movie').on('click', function () {--}}
-{{--                var userURL = $(this).data('url');--}}
-{{--                var trObj = $(this);--}}
-{{--                if (confirm("Are you sure you want to remove it?") === true) {--}}
-{{--                    $.ajax({--}}
-{{--                        url: userURL,--}}
-{{--                        type: 'DELETE',--}}
-{{--                        dataType: 'json',--}}
-{{--                        success: function (data) {--}}
-{{--                            if (data['success']) {--}}
-{{--                                // alert(data.success);--}}
-{{--                                trObj.parents("tr").remove();--}}
-{{--                            } else if (data['error']) {--}}
-{{--                                alert(data.error);--}}
-{{--                            }--}}
-{{--                        }--}}
-{{--                    });--}}
-{{--                }--}}
+<script>
+    $(document).ready(function () {
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        
+        $('.delete-movie').on('click', function () {
+            var userURL = $(this).data('url');
+            var trObj = $(this);
+            if (confirm("Bạn có chắc chắn muốn xóa phim không?") === true) {
+                $.ajax({
+                    url: userURL,
+                    type: 'DELETE',
+                    dataType: 'json',
+                    success: function (data) {
+                        if (data['success']) {
+                            // alert(data.success);
+                            trObj.parents("tr").remove();
+                        } else if (data['error']) {
+                            alert(data.error);
+                        }
+                    }
+                });
+            }
 
-{{--            });--}}
-{{--        });--}}
-{{--    </script>--}} -->
+        });
+    });
+</script>
 <script>
     $(document).ready(function() {
         $.ajaxSetup({

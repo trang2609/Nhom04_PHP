@@ -8,7 +8,7 @@ active
     <div class="mt-5" id="Events">
         <ul class="nav justify-content-start mb-4 align-items-center">
             <li class="nav-item">
-                <a class="h5 nav-link link-warning active fw-bold border-bottom border-2 border-warning" href="#tintuc" role="button" data-bs-target="#tintuc" disabled>
+                <a class="h5 nav-link link-success active fw-bold border-bottom border-2 border-success" href="#tintuc" role="button" data-bs-target="#tintuc" disabled>
                     @lang('lang.events')
                 </a>
             </li>
@@ -45,7 +45,7 @@ active
                         </div>
                         <div class="card-footer bg-transparent border-0 h-25">
                             <a @if($post->type == 'post') href="/events-detail/{!! $post->id !!}"
-                                @else href="/events-detail/{!! $post->id !!}" @endif class="btn btn-primary float-end">@lang('lang.show')</a>
+                                @else href="/events-detail/{!! $post->id !!}" @endif class="btn btn-success float-end">@lang('lang.show')</a>
                         </div>
                     </div>
                 </div>
@@ -65,7 +65,7 @@ active
                         </div>
                         <div class="card-footer border-0 bg-transparent h-25">
                             <a @if($post->type == 'post') href="/events-detail/{!! $post->id !!}"
-                                @else href="/events-detail/{!! $post->id !!}" @endif class="btn btn-primary float-start">XEM</a>
+                                @else href="/events-detail/{!! $post->id !!}" @endif class="btn btn-success float-start">XEM</a>
                         </div>
                     </div>
                     <div class="flex-shrink-0">

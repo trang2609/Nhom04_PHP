@@ -21,7 +21,7 @@
 
             <div class="row">
                 <div class="col-sm-6 col-lg-3">
-                    <div class="card border border-4 border-warning rounded-0">
+                    <div class="card border border-4 border-success rounded-0">
                         @if(strstr($movie['image'],"https") == "")
                             <img class="card-img-top rounded-0" alt='...'
                                  src="https://res.cloudinary.com/{!! $cloud_name !!}/image/upload/{!! $movie['image'] !!}.jpg">
@@ -30,7 +30,7 @@
                                  src="{!! $movie['image'] !!}">
                         @endif
                     </div>
-                    <div class="card-body border border-4 border-warning border-top-0 d-flex align-items-center">
+                    <div class="card-body border border-4 border-success border-top-0 d-flex align-items-center">
                         <strong class="card-text p-2">@lang('lang.evaluate'): </strong>
                         <div id='score' class="score"></div>
                     </div>
@@ -125,18 +125,18 @@
                             @if(date('H:i', strtotime('+ 20 minutes', strtotime($schedule->startTime))) >= date('H:i'))
                                 @if(Auth::check())
                                     <a href="/tickets/{{$schedule->id}}"
-                                       class="btn btn-warning rounded-0 p-1 m-0 me-4 border-2 border-light"
+                                       class="btn btn-success rounded-0 p-1 m-0 me-4 border-2 border-light"
                                        style="border-width: 2px; border-style: solid dashed; min-width: 85px">
-                                        <p class="btn btn-warning rounded-0 m-0 border border-light border-1">
+                                        <p class="btn btn-success rounded-0 m-0 border border-light border-1">
                                             {{ date('H:i', strtotime($schedule->startTime )).' - '.date('d-m-Y', strtotime($schedule->date)) }}
                                         </p>
                                     </a>
                                 @else
-                                    <a class="btn btn-warning rounded-0 p-1 m-0 me-4 border-2 border-light"
+                                    <a class="btn btn-success rounded-0 p-1 m-0 me-4 border-2 border-light"
                                        data-bs-toggle="modal"
                                        data-bs-target="#loginModal"
                                        style="border-width: 2px; border-style: solid dashed; min-width: 85px">
-                                        <p class="btn btn-warning rounded-0 m-0 border border-light border-1">
+                                        <p class="btn btn-success rounded-0 m-0 border border-light border-1">
                                             {{ date('H:i', strtotime($schedule->startTime )).' | '.date('d-m-Y', strtotime($schedule->date)
                                             ) }}
                                         </p>
@@ -147,18 +147,18 @@
                         @if(date('Y-m-d') < $schedule->date)
                             @if(Auth::check())
                                 <a href="/tickets/{{$schedule->id}}"
-                                   class="btn btn-warning rounded-0 p-1 m-0 me-4 border-2 border-light"
+                                   class="btn btn-success rounded-0 p-1 m-0 me-4 border-2 border-light"
                                    style="border-width: 2px; border-style: solid dashed; min-width: 85px">
-                                    <p class="btn btn-warning rounded-0 m-0 border border-light border-1">
+                                    <p class="btn btn-success rounded-0 m-0 border border-light border-1">
                                         {{ date('H:i', strtotime($schedule->startTime )).' | '.date('d-m-Y', strtotime($schedule->date)) }}
                                     </p>
                                 </a>
                             @else
-                                <a class="btn btn-warning rounded-0 p-1 m-0 me-4 border-2 border-light"
+                                <a class="btn btn-success rounded-0 p-1 m-0 me-4 border-2 border-light"
                                    data-bs-toggle="modal"
                                    data-bs-target="#loginModal"
                                    style="border-width: 2px; border-style: solid dashed; min-width: 85px">
-                                    <p class="btn btn-warning rounded-0 m-0 border border-light border-1">
+                                    <p class="btn btn-success rounded-0 m-0 border border-light border-1">
                                         {{ date('H:i', strtotime($schedule->startTime )).' - '.date('d-m-Y', strtotime($schedule->date)) }}
                                     </p>
                                 </a>
@@ -175,7 +175,7 @@
                         <button data-bs-toggle="collapse"
                                 data-bs-target="#schedule_date_{{$i}}"
                                 aria-expanded="false"
-                                class="btn btn-block btn-outline-dark p-2 m-2">
+                                class="btn btn-block btn-outline-success p-2 m-2">
                             {{ date('d/m', strtotime('+ '.$i.' day', strtotime(today()))) }}
                         </button>
                     </li>

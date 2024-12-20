@@ -9,33 +9,33 @@
                             @csrf
                             <div class="card-header pb-0">
                                 <div class="d-flex align-items-center">
-                                    <p class="mb-0">@lang('lang.movies')</p>
-                                    <button type="submit" class="btn bg-gradient-primary btn-sm ms-auto">@lang('lang.submit')</button>
+                                    <p class="mb-0">QUẢN LÝ PHIM</p>
+                                    <button type="submit" class="btn bg-gradient-success btn-sm ms-auto">Lưu</button>
                                 </div>
                             </div>
                             <div class="card-body">
-                                <p class="text-uppercase text-sm">@lang('lang.create')</p>
+                                <p class="text-uppercase text-sm">Thêm phim mới</p>
 
                                 <div class="row">
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label for="movieName" class="form-control-label">@lang('lang.movie_name')</label>
+                                            <label for="movieName" class="form-control-label">Tên phim</label>
                                             <input class="form-control" name="name" id="movieName" type="text" value=""
-                                                   placeholder="@lang('lang.movie_name')">
+                                                   placeholder="Nhập tên phim...">
                                         </div>
                                     </div>
                                     <div class="col-md-2">
                                         <div class="form-group">
-                                            <label for="showTime">@lang('lang.showtime')</label>
-                                            <input id="showTime" class="form-control" name="showTime" placeholder="@lang('lang.showtime')"
+                                            <label for="showTime">Thời lượng</label>
+                                            <input id="showTime" class="form-control" name="showTime" placeholder="Nhập thời lượng phim..."
                                                    type="number" value="">
                                         </div>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <label for="national">@lang('lang.national')</label>
+                                            <label for="national">Quốc gia</label>
                                             <select class="form-select" name="national" id="national">
-                                                <option value="">@lang('lang.national')</option>
+                                                <option value="">Quốc gia</option>
                                                 <option value="Afghanistan">Afghanistan</option>
                                                 <option value="Aland Islands">Quần đảo Aland</option>
                                                 <option value="Albania">Albania</option>
@@ -140,7 +140,7 @@
                                                 <option value="Iceland">Nước Iceland</option>
                                                 <option value="India">Ấn Độ</option>
                                                 <option value="Indonesia">Indonesia</option>
-                                                <option value="Iran, Islamic Republic of">Iran (Cộng hòa Hồi giáo</option>
+                                                <option value="Iran, Islamic Republic of">Iran (Cộng hòa Hồi giáo)</option>
                                                 <option value="Iraq">I-rắc</option>
                                                 <option value="Ireland">Ireland</option>
                                                 <option value="Isle of Man">Đảo Man</option>
@@ -153,8 +153,8 @@
                                                 <option value="Kazakhstan">Kazakhstan</option>
                                                 <option value="Kenya">Kenya</option>
                                                 <option value="Kiribati">Kiribati</option>
-                                                <option value="Korea, Democratic People's Republic of">Hàn Quốc, Cộng hòa Dân chủ Nhân dân</option>
-                                                <option value="Korea, Republic of">Hàn Quốc, Cộng hòa</option>
+                                                <option value="Korea, Democratic People's Republic of">Triều Tiên</option>
+                                                <option value="Korea, Republic of">Hàn Quốc</option>
                                                 <option value="Kosovo">Kosovo</option>
                                                 <option value="Kuwait">Kuwait</option>
                                                 <option value="Kyrgyzstan">Kyrgyzstan</option>
@@ -260,7 +260,7 @@
                                                 <option value="Taiwan, Province of China">Đài Loan, tỉnh của Trung Quốc</option>
                                                 <option value="Tajikistan">Tajikistan</option>
                                                 <option value="Tanzania, United Republic of">Tanzania, Cộng hòa Thống nhất</option>
-                                                <option value="Thailand">nước Thái Lan</option>
+                                                <option value="Thailand">Thái Lan</option>
                                                 <option value="Timor-Leste">Timor-Leste</option>
                                                 <option value="Togo">Đi</option>
                                                 <option value="Tokelau">Tokelau</option>
@@ -294,17 +294,17 @@
                                     </div>
                                     <div class="col-md-2">
                                         <div class="form-group">
-                                            <label for="movieGenres">@lang('lang.movie_genre')</label>
-                                            <button type="button" class="form-control btn bg-gradient-danger float-right mb-3" data-bs-toggle="modal"
+                                            <label for="movieGenres">Thể loại</label>
+                                            <button type="button" class="form-control btn bg-gradient-success float-right mb-3" data-bs-toggle="modal"
                                                     data-bs-target="#movie_genre">
-                                                @lang('lang.select')
+                                                Chọn thể loại
                                             </button>
                                         </div>
                                     </div>
                                     @include('admin.movie.modal_movie_genres')
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label for="directors">@lang('lang.directors')</label>
+                                            <label for="directors">Nhập tên đạo diễn</label>
                                             <select id="directors" class="form-control director-input" name="directors[]" multiple>
                                                 @foreach($directors as $director)
                                                     <option value="{{ $director->id }}">{!! $director->name !!}</option>
@@ -314,19 +314,19 @@
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <label for="releaseDate">@lang('lang.release_date')</label>
+                                            <label for="releaseDate">Ngày phát hành</label>
                                             <input name="releaseDate"  id="releaseDate" class="form-control datepicker" placeholder="Please select date" type="text">
                                         </div>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <label for="endDate">@lang('lang.end_date')</label>
+                                            <label for="endDate">Ngày kết thúc</label>
                                             <input id="endDate" name="endDate" class="form-control datepicker" placeholder="Please select date" type="text">
                                         </div>
                                     </div>
                                     <div class="col-md-2">
                                         <div class="form-group">
-                                            <label for="rating">@lang('lang.rated')</label>
+                                            <label for="rating">Giới hạn độ tuổi</label>
                                             <select id="rating" class="form-select" name="rating">
                                                 @foreach($rating as $item)
                                                     <option value="{{ $item->id }}" class="fw-bold"
@@ -337,7 +337,7 @@
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="casts">@lang('lang.casts')</label>
+                                            <label for="casts">Nhập tên diễn viên</label>
                                             <select id="casts" class="form-select cast-input" name="casts[]" multiple>
                                                 @foreach($casts as $cart)
                                                     <option value="{{ $cart->id }}">{{ $cart->name }}</option>
@@ -347,7 +347,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group file-uploader">
-                                            <label for="movieImage">@lang('lang.image')</label>
+                                            <label for="movieImage">Hình ảnh</label>
                                             <input id="movieImage" type="file" name="Image" class="form-control image-movie">
                                             <img style="width: 300px" src="" class="img_movie d-none" alt="user1">
                                         </div>
@@ -362,8 +362,8 @@
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="editor">@lang('lang.description')</label>
-                                            <textarea class="form-control" name="description" id="editor" placeholder="description"></textarea>
+                                            <label for="editor">Mô tả</label>
+                                            <textarea class="form-control" name="description" id="editor" placeholder="Mô tả phim..."></textarea>
                                         </div>
                                     </div>
 
