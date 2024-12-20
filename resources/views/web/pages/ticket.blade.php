@@ -18,6 +18,10 @@
     color: #e50019;
     font-weight: 700;
     }
+
+    .mt-5{
+        color: #198754;
+    }
 @endsection
 @section('content')
     <section class="container-fluid clearfix row">
@@ -107,7 +111,7 @@
                 {{--Process bar--}}
                 <ul class="nav justify-content-around fw-bold">
                     <li class="nav-item">
-                        <a class="nav-link active text-warning"
+                        <a class="nav-link active text-success"
                            href="#Seats"
                            aria-controls="seat"
                            aria-expanded="true"
@@ -123,7 +127,7 @@
                 </ul>
                 <div class="progress" role="progressbar" aria-label="Example 1px high" aria-valuenow="10" aria-valuemin="0"
                      aria-valuemax="30" style="height: 2px">
-                    <div class="progress-bar bg-warning" style="width: 34%"></div>
+                    <div class="progress-bar bg-success" style="width: 34%"></div>
                 </div>
                 {{--Process bar : end--}}
 
@@ -260,7 +264,7 @@
                         </div>
 
                         <div class="d-flex justify-content-start w-50 ms-2 mt-4 float-end">
-                            <button class="btn btn-warning text-decoration-underline text-center btn_next">
+                            <button class="btn btn-success text-decoration-underline text-center btn_next">
                                 @lang('lang.next') <i class="fa-solid fa-angle-right"></i>
                             </button>
                             <button
@@ -280,7 +284,7 @@
                                 <!-- Combo -->
                                 <div class="col">
                                     <div class="card px-0 overflow-hidden" id="Combo_{{$combo->id}}"
-                                         style="background: #f5f5f5">
+                                         style="background: #ffffff">
                                         <div class="row g-0">
                                             <div class="col-lg-4 col-12">
                                                 @if(strstr($combo->image,"https") == "")
@@ -293,7 +297,7 @@
                                             </div>
                                             <div class="col-lg-8 col-12">
                                                 <div class="card-body">
-                                                    <h5 class="card-title text-dark">{{ $combo->name }}</h5>
+                                                    <h5 class="card-title text-success">{{ $combo->name }}</h5>
                                                     <p class="card-text text-dark">
                                                         @foreach($combo->foods as $food)
                                                             @if($loop->first)
@@ -303,7 +307,7 @@
                                                             @endif
                                                         @endforeach
                                                     </p>
-                                                    <p class="card-text">Giá: <span class="fw-bold">{{ number_format($combo->price) }} đ</span></p>
+                                                    <p class="card-text text-success">Giá: <span class="fw-bold">{{ number_format($combo->price) }} đ</span></p>
                                                 </div>
                                                 <div class="card-body input_combo_block">
                                                     <div class="input-group">
@@ -329,7 +333,7 @@
                         </div>
 
                         <div class="d-flex justify-content-center mt-4">
-                            <button id="comboBack" class="btn btn-warning mx-2 text-decoration-underline text-center btn_back"
+                            <button id="comboBack" class="btn btn-success mx-2 text-decoration-underline text-center btn_back"
                                     onclick="comboBack()"
                                     aria-expanded="false"
                                     data-bs-toggle="collapse"
@@ -337,7 +341,7 @@
                             ><i class="fa-solid fa-angle-left"></i> @lang('lang.previous')
                             </button>
 
-                            <button class="btn btn-warning mx-2  text-decoration-underline text-center btn_next"
+                            <button class="btn btn-success mx-2  text-decoration-underline text-center btn_next"
                                     onclick="comboNext()"
                                     aria-controls="Payment"
                                     aria-expanded="false"
@@ -355,7 +359,7 @@
                                 <thead>
                                 <tr>
                                     <td>Tên</td>
-                                    <td>điểm hiện có</td>
+                                    <td>Điểm hiện có</td>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -375,9 +379,9 @@
                                 <div class="row row-cols-1">
                                     <div class="form-check pe-4" id="bankCode">
                                         <div class="input-group">
-                                            <input type="text" class="form-control border-dark" id="discount"
-                                                   aria-label="" placeholder="nhập mã khuyến mãi...">
-                                            <a id="btn_apply_discount" class="btn btn-danger">@lang('lang.apply')</a>
+                                            <input type="text" class="form-control border-success" id="discount"
+                                                   aria-label="" placeholder="Nhập mã khuyến mãi...">
+                                            <a id="btn_apply_discount" class="btn btn-success">@lang('lang.apply')</a>
                                         </div>
                                     </div>
                                     <table class="table table-bordered mt-2">
@@ -400,7 +404,7 @@
                                         <div class="form-check pe-4" id="bankCode">
                                             <input id="bankCode1" class="btn-check" type="radio" name="bankCode" value="VNPAYQR" aria-label="">
                                             <label for="bankCode1"
-                                                   class="fw-semibold btn btn-light btn-outline-primary h3 p-3 my-2 w-100 text-start text-dark">
+                                                   class="fw-semibold btn btn-light btn-outline-success h3 p-3 my-2 w-100 text-start text-dark">
                                                 Thanh toán bằng ứng dụng hỗ trợ
                                                 <span class="vnpay-logo">
                                                     <span class="vnpay-red">VN</span><span class="vnpay-blue">PAY</span><sup class="vnpay-red">QR</sup>
@@ -410,13 +414,13 @@
 
                                             <input id="bankCode2" class="btn-check" type="radio" name="bankCode" value="VNBANK" aria-label="">
                                             <label for="bankCode2"
-                                                   class="fw-semibold btn btn-light btn-outline-primary h3 p-3 my-2 w-100 text-start text-dark">
+                                                   class="fw-semibold btn btn-light btn-outline-success h3 p-3 my-2 w-100 text-start text-dark">
                                                 Thanh toán qua thẻ ATM/Tài khoản nội địa
                                             </label>
 
                                             <input id="bankCode3" class="btn-check" type="radio" name="bankCode" value="INTCARD" aria-label="">
                                             <label for="bankCode3"
-                                                   class="fw-semibold btn btn-light btn-outline-primary h3 p-3 my-2 w-100 text-start text-dark">
+                                                   class="fw-semibold btn btn-light btn-outline-success h3 p-3 my-2 w-100 text-start text-dark">
                                                 Thanh toán qua thẻ quốc tế
                                             </label>
                                         </div>
@@ -431,7 +435,7 @@
 
 
                             <div class="d-flex justify-content-center mt-4">
-                                <button type="button" class="btn btn-warning mx-2 text-decoration-underline text-center"
+                                <button type="button" class="btn btn-success mx-2 text-decoration-underline text-center"
                                         onclick="paymentBack()"
                                         aria-expanded="true"
                                         data-bs-toggle="collapse"
@@ -439,7 +443,7 @@
                                     <i class="fa-solid fa-angle-left"></i> @lang('lang.previous')
                                 </button>
                                 <button type="button" onclick="paymentNext()"
-                                        class="btn btn-warning mx-2 text-decoration-underline text-uppercase text-center">
+                                        class="btn btn-success mx-2 text-decoration-underline text-uppercase text-center">
                                     Đặt vé <i class="fa-solid fa-angle-right"></i>
                                 </button>
                             </div>

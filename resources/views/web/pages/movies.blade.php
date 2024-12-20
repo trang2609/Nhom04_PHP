@@ -3,12 +3,43 @@
     active
 @endsection
 @section('content')
+
+<style>
+
+    .card {
+        border: 1px solid #72be43;
+        border-radius: 0.5rem;
+        background-color: #ffffff;
+        color: #72be43;
+        }
+
+    .card-body {
+        background-color: #ffffff; 
+        }
+
+    .card a {
+            color: #72be43;
+        }
+
+    .card-title {
+            color: #72be43;
+            font-weight: bold;
+        }
+
+    .card-text {
+            color: #000000;
+        }
+
+    .card .badge {
+            color: #ffffff;
+        }
+</style>
     <section class="container-lg clearfix">
         <!-- Main content -->
         <div class="mt-5" id="Movies">
             <ul class="nav justify-content-start mb-4 align-items-center">
                 <li class="nav-item">
-                    <button class="h5 nav-link link-warning active fw-bold border-bottom border-2 border-warning"
+                    <button class="h5 nav-link link-success active fw-bold border-bottom border-2 border-success"
                             aria-expanded="true"
                             data-bs-toggle="collapse"
                             data-bs-target="#phimdangchieu" disabled>
@@ -326,8 +357,8 @@
             });
 
             $("#Movies .nav .nav-item .nav-link").on("click", function () {
-                $("#Movies .nav-item").find(".active").removeClass("active link-warning fw-bold border-bottom border-2 border-warning").addClass("link-secondary").prop('disabled', false);
-                $(this).addClass("active link-warning fw-bold border-bottom border-2 border-warning").removeClass("link-secondary").prop('disabled', true);
+                $("#Movies .nav-item").find(".active").removeClass("active link-success fw-bold border-bottom border-2 border-success").addClass("link-secondary").prop('disabled', false);
+                $(this).addClass("active link-success fw-bold border-bottom border-2 border-success").removeClass("link-secondary").prop('disabled', true);
             });
         });
     </script>

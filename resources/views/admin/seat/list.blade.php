@@ -14,14 +14,14 @@
                                 <div class="row">
                                     <div class="col-6">
                                         <div class="form-group">
-                                            <label for="name">Email address</label>
+                                            <label for="name">Tên phòng</label>
                                             <input id="name" type="text" name="name" class="form-control"
-                                                   placeholder="Name..." value="{{$room->name}}">
+                                                   placeholder="Nhập tên phòng..." value="{{$room->name}}">
                                         </div>
                                     </div>
                                     <div class="col-6">
                                         <div class="form-group">
-                                            <label for="type">Room type</label>
+                                            <label for="type">Loại phòng</label>
                                             <select class="form-control" name="type" id="type">
                                                 @foreach($roomTypes as $type)
                                                     <option value="{{$type->id}}"
@@ -33,7 +33,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <button type="submit" class="btn btn-primary float-end">save</button>
+                                <button type="submit" class="btn btn-success float-end">Lưu</button>
                             </form>
                         </div>
                     </div>
@@ -46,7 +46,7 @@
                         <div class="card-body px-0 pt-0 pb-2">
                             <div class="d-block overflow-x-auto text-center">
                                 <div class="w-100 mt-2 my-auto mb-4 text-center justify-content-center">
-                                    @lang('lang.screen')
+                                    MÀN HÌNH
                                     <div class="row bg-dark w-100 mx-auto" style="height: 2px; max-width: 540px"></div>
 
                                     <div class="row d-block m-2" style="margin: 2px">

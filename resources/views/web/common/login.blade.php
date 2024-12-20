@@ -4,7 +4,7 @@
     <div class="modal-dialog container">
         <div class="modal-content">
             <div class="modal-header text-uppercase">
-                <h5 class="modal-title" id="loginModalLabel">@lang('lang.signin')</h5>
+                <h5 class="modal-title text-success" id="loginModalLabel">@lang('lang.signin')</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body my-4">
@@ -39,9 +39,9 @@
                     </div>
 
                     <div class="modal-footer justify-content-center text-center">
-                        <button type='submit' class="btn btn-warning text-uppercase">@lang('lang.signin')</button>
-                        <p class="text-dark w-100">@lang('lang.have_account')?
-                            <a class="link link-warning" data-bs-target="#registerModal" data-bs-toggle="modal"
+                        <button type='submit' class="btn btn-success text-uppercase">@lang('lang.signin')</button>
+                        <p class="text-dark w-100">@lang('lang.not_have_account')?
+                            <a class="link link-success" data-bs-target="#registerModal" data-bs-toggle="modal"
                                href="#registerModal">@lang('lang.signup')
                             </a>
                         </p>
@@ -59,7 +59,7 @@
     <div class="modal-dialog container">
         <div class="modal-content">
             <div class="modal-header text-uppercase">
-                <h5 class="modal-title" id="registerModalLabel">@lang('lang.signup')</h5>
+                <h5 class="modal-title text-success" id="registerModalLabel">@lang('lang.signup')</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body my-4">
@@ -83,9 +83,9 @@
                         <input class="form-control" type="password" placeholder="@lang('lang.re_password')..." name="repassword" aria-label="">
                     </div>
                     <div class="modal-footer justify-content-center text-center">
-                        <button type='submit' class="btn btn-warning text-uppercase">@lang('lang.signup')</button>
-                        <p class="text-dark w-100">@lang('lang.not_have_account')?
-                            <a class="link link-warning" data-bs-target="#loginModal" data-bs-toggle="modal" href="#loginModal">@lang('lang.signin')
+                        <button type='submit' class="btn btn-success text-uppercase">@lang('lang.signup')</button>
+                        <p class="text-dark w-100">@lang('lang.have_account')?
+                            <a class="link link-success" data-bs-target="#loginModal" data-bs-toggle="modal" href="#loginModal">@lang('lang.signin')
                             </a>
                         </p>
                     </div>
@@ -100,7 +100,7 @@
     <div class="modal-dialog container">
         <div class="modal-content">
             <div class="modal-header text-uppercase">
-                <h5 class="modal-title" id="forgotModalLabel">@lang('lang.forget_password')</h5>
+                <h5 class="modal-title text-success" id="forgotModalLabel">@lang('lang.forget_password')</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body my-4">
@@ -110,9 +110,9 @@
                         <input class="form-control" type="email" placeholder="@lang('lang.type') email" name="email" aria-label="">
                     </div>
                     <div class="modal-footer justify-content-center text-center">
-                        <button type='submit' class="btn btn-warning text-uppercase">@lang('lang.submit')</button>
+                        <button type='submit' class="btn btn-success text-uppercase">@lang('lang.submit')</button>
                         <p class="text-dark w-100">@lang('lang.have_account')?
-                            <a class="link link-warning" data-bs-target="#loginModal" data-bs-toggle="modal" href="#loginModal">@lang('lang.signin')
+                            <a class="link link-success" data-bs-target="#loginModal" data-bs-toggle="modal" href="#loginModal">@lang('lang.signin')
                             </a>
                         </p>
                     </div>

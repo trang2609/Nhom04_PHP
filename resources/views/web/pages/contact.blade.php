@@ -177,7 +177,7 @@
 
     .fancy:hover {
     color: white;
-    background: #cacaca;
+    background: #72be43;
     }
 
     .fancy:hover::before {
@@ -245,7 +245,7 @@
             });
             $('.feedback').on('click', function () {
                 var message =  $('.message_feedback').val();
-                if (confirm("Thông tin của bạn sẽ được ghi nhận vào hệ thống, bạn có chắc muốn gửi ?") === true) {
+                if (confirm("Thông tin của bạn sẽ được ghi nhận vào hệ thống, bạn có chắc muốn gửi?") === true) {
                     $.ajax({
                         url: '/feedback',
                         type: 'POST',

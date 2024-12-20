@@ -106,7 +106,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn bg-gradient-secondary" data-bs-dismiss="modal">@lang('lang.close')</button>
-                <button type="button" class="btn bg-gradient-info" onclick="btnEdit({{$theater->id}})">
+                <button type="button" class="btn bg-gradient-success" onclick="btnEdit({{$theater->id}})">
                     @lang('lang.save')
                 </button>
             </div>

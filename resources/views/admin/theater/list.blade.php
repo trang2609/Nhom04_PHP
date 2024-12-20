@@ -16,12 +16,12 @@
                 <div class="col-12">
                     <div class="card mb-4">
                         <div class="card-header pb-0">
-                            <h6>@lang('lang.theater')</h6>
+                            <h6>Quản lý rạp</h6>
                         </div>
                         <div class="card-body px-0 pt-0 pb-2">
                             <div class="table-responsive p-0">
                                 <a style="float:right;padding-right:30px;" class="text-light">
-                                    <button class=" btn bg-gradient-info float-right mb-3" data-bs-toggle="modal" data-bs-target="#theaterCreateModal">
+                                    <button class=" btn btn-success float-right mb-3" data-bs-toggle="modal" data-bs-target="#theaterCreateModal">
                                         @lang('lang.create')
                                     </button>
                                 </a>
@@ -29,16 +29,16 @@
                                 <table class="table align-items-center mb-0 ">
                                     <thead>
                                     <tr>
-                                        <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">
+                                        <th class="text-uppercase text-dark text-center text-xxs font-weight-bolder opacity-7">
                                             @lang('lang.name')
                                         </th>
-                                        <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">
+                                        <th class="text-uppercase text-dark text-center text-xxs font-weight-bolder opacity-7">
                                             @lang('lang.address')
                                         </th>
-                                        <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">
-                                            @lang('lang.room')
+                                        <th class="text-uppercase text-dark text-center text-xxs font-weight-bolder opacity-7">
+                                            Số phòng
                                         </th>
-                                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                        <th class="text-center text-uppercase text-dark text-xxs font-weight-bolder opacity-7">
                                             @lang('lang.status')
                                         </th>
                                         <th></th>
@@ -70,7 +70,7 @@
                                                 @endif
                                             </td>
                                             <td class="align-middle">
-                                                <a href="#TheaterEditModal" class="text-secondary font-weight-bold text-xs"
+                                                <a href="#TheaterEditModal" class="text-success font-weight-bold text-xs"
                                                         onclick="editTheater({{ $theater->id }}, '{{ $theater->city }}')"
                                                         data-bs-toggle="modal"
                                                         data-bs-target="#TheaterEditModal{{ $theater->id }}">
@@ -80,7 +80,7 @@
                                             </td>
                                             <td class="align-middle">
                                                 <a href="javascript:void(0)" data-url="{{ url('admin/theater/delete', $theater['id'] ) }}"
-                                                   class="text-secondary font-weight-bold text-xs delete-theater" data-toggle="tooltip">
+                                                   class="text-danger font-weight-bold text-xs delete-theater" data-toggle="tooltip">
                                                     <i class="fa-solid fa-trash-can fa-lg"></i>
                                                 </a>
                                             </td>
@@ -185,7 +185,7 @@
             $('.delete-theater').on('click', function () {
                 var userURL = $(this).data('url');
                 var trObj = $(this);
-                if (confirm("Are you sure you want to remove it?") == true) {
+                if (confirm("Bạn có chắc chắn muốn xóa rạp??") == true) {
                     $.ajax({
                         url: userURL,
                         type: 'DELETE',
@@ -214,7 +214,7 @@
             $('.delete-room').on('click', function () {
                 var userURL = $(this).data('url');
                 var trObj = $(this);
-                if (confirm("Are you sure you want to remove it?") == true) {
+                if (confirm("Bạn có chắc chắn muốn xóa phòng??") == true) {
                     $.ajax({
                         url: userURL,
                         type: 'DELETE',

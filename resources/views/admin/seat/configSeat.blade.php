@@ -1,7 +1,7 @@
 <div class="offcanvas offcanvas-start" tabindex="-1" id="EditSeat_{{ $seat->id }}"
      aria-labelledby="EditSeatRowLabel">
     <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="EditSeatRowLabel">@lang('lang.edit') {{ $seat->row.$seat->col }}</h5>
+        <h5 class="offcanvas-title" id="EditSeatRowLabel">Chỉnh sửa ghế {{ $seat->row.$seat->col }}</h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
                 aria-label="Close"></button>
     </div>
@@ -38,21 +38,21 @@
                     @endif
             </label>
             <div class="form-group">
-                <label for="seat_ms_{{ $seat->id }}">@lang('lang.left_align')</label>
+                <label for="seat_ms_{{ $seat->id }}">Căn trái</label>
                 <input class="form-control" type="number" name="ms" id="seat_ms_{{ $seat->id }}" value="{{ $seat->ms }}">
             </div>
             <div class="form-group">
-                <label for="seat_me_{{ $seat->id }}">@lang('lang.right_align')</label>
+                <label for="seat_me_{{ $seat->id }}">Căn phải</label>
                 <input class="form-control" type="number" name="me" id="seat_me_{{ $seat->id }}" value="{{ $seat->me }}">
             </div>
             <input type="hidden" name="room" value="{{ $room->id }}">
             <input type="hidden" name="seat" value="{{ $seat->id }}">
-            <a href="admin/seat/delete/{{$seat->id}}?room={{ $room->id }}" class="btn btn-primary mt-4">
-                <i class="fa-solid fa-trash-can fa-lg"></i> @lang('lang.delete')
+            <a href="admin/seat/delete/{{$seat->id}}?room={{ $room->id }}" class="btn btn-danger mt-4">
+                Hủy
             </a>
-            <button type="submit" class="btn btn-primary mt-4"
+            <button type="submit" class="btn btn-success mt-4"
                     data-bs-dismiss="offcanvas">
-                @lang('lang.confirm')
+                Lưu
             </button>
         </form>
     </div>

@@ -8,7 +8,7 @@ active
     <div class="mt-5" id="Events">
         <ul class="nav justify-content-start mb-4 align-items-center">
             <li class="nav-item">
-                <a class="h5 nav-link link-warning active fw-bold border-bottom border-2 border-warning" href="#tintuc" role="button" data-bs-target="#tintuc" disabled>
+                <a class="h5 nav-link link-success active fw-bold border-bottom border-2 border-success" href="#tintuc" role="button" data-bs-target="#tintuc" disabled>
                     @lang('lang.news')
                 </a>
             </li>
@@ -43,7 +43,7 @@ active
                             </p>
                         </div>
                         <div class="card-footer h-25">
-                            <a href="/news-detail/{!! $value['id'] !!}" class="btn btn-primary float-end">@lang('lang.more')</a>
+                            <a href="/news-detail/{!! $value['id'] !!}" class="btn btn-success float-end">@lang('lang.more')</a>
                         </div>
                     </div>
                 </div>
@@ -61,7 +61,7 @@ active
                             <p class="card-text"><small class="text-body-secondary">{!! date('d F Y', strtotime($value['created_at'] )) !!}</small></p>
                         </div>
                         <div class="card-footer h-25">
-                            <a href="/news-detail/{!! $value['id'] !!}" class="btn btn-primary float-start">@lang('lang.show')</a>
+                            <a href="/news-detail/{!! $value['id'] !!}" class="btn btn-success float-start">@lang('lang.more')</a>
                         </div>
                     </div>
                     <div class="flex-shrink-0">

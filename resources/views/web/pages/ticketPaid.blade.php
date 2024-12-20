@@ -24,7 +24,7 @@
             height: 100vh;
             display: grid;
             font-family: "Roboto", cursive;
-            background: #d83565;
+            background: #72be43;
             color: black;
             font-size: 14px;
             letter-spacing: 0.1em;
@@ -112,7 +112,7 @@
         }
 
         .date .june-29 {
-            color: #d83565;
+            color: #198754;
             font-size: 20px;
         }
 
@@ -120,7 +120,7 @@
             font-size: 24px;
             /*font-family: "Nanum Pen Script", cursive;*/
             font-family: "Roboto", cursive;
-            color: #d83565;
+            color: #198754;
             padding: 4px;
         }
 

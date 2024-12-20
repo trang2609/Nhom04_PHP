@@ -3,6 +3,9 @@
     .image img{
         width: 100%;
     }
+    .mt-4{
+        color: #72be43;
+    }
 @endsection
 @section('content')
     <section class="container-lg">
@@ -18,7 +21,7 @@
         <div class="row container">
             <h2 class="mt-4">{!! $post['title'] !!}</h2>
             <div class="accordion-item">
-                <div class="accordion-body  mt-4 mb-3">
+                <div class="accordion-body  mt-4 mb-3" style="color: black;">
                     {!! $post['content'] !!}
                 </div>
             </div>
@@ -40,7 +43,7 @@
             <h5 class="mt-4">@lang('lang.other_events')</h5>
             @foreach($post_all as $value)
             <div class="col-sm-6 col-lg-3">
-                <div class="card border border-4 border-warning rounded-0">
+                <div class="card border border-4 border-success rounded-0">
                     <a href="/events-detail/{!! $value['id'] !!}">
                 @if(strstr($value['image'],"https") == "")
                     <img class="card-img-top rounded-0" alt='...'
